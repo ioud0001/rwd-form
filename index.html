@@ -1,71 +1,87 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css">
+<link rel="stylesheet" href="css/form.css" />
+<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+<script src="js/main.js"></script>
+<meta charset="UTF-8">
     <title>Responsive Travel Form</title>
-	<link rel="stylesheet" href="css/form.css" />
 </head>
 <body>
-	<div class="wrapper">
+	<div class="wrapper"  data-role="page">
+    <div data-role="header">
 		<header class="masthead">
 			<h1>Hotel-O-City</h1>
 		</header>
+    </div>
+    <div data-role="main" class="ui-content">
 		<section class="main">
-			<h2>A Heading That You Can Change</h2>
-			<p>Some information about the form, the page, and/or the site.</p>
-			<form name="travelForm" id="travelForm" action="#" method="post" enctype="application/x-www-form-urlencoded">
-				
-				<div class="formBox">
-					<label for="departure"></label>
+			<h2>Be My Valentine Tours</h2>
+			<p>We specialize in Valentine's Day travel packages.</p>
+            <p>Whether you are looking for a romantic getaway, a get away from the mid-winter blues, an adventure to exotic places, or just something less ordinary, we will help you!</p>
+            
+    	<form name="travelForm" id="travelForm" action="#" method="post" enctype="application/x-www-form-urlencoded">
+        <div class="formBox">
+					<label for="fname">First Name:</label>
+					<input type="text" name="fname" id="fname" placeholder="First Name" />
+                    
+					<label for="lname">Last Name:</label>
+					<input type="text" name="lname" id="lname" placeholder="Last Name" />
+                    
+                    <label for="pno">Phone Number: Personal:</label>
+					<input type="text" name="pno" id="pno" placeholder="Phone number: Personal" />
+                    <label for="pno">Phone Number: Work:</label>
+					<input type="text" name="pwork" id="pwork" placeholder="Work:" /> <label for="pext">Ext.</label><input type="text" name="pext" id="pext" placeholder="Extension" />
+			</div> 
+            <div class="formBox">
+					<label for="departure">Leaving from:</label>
 					<input type="text" name="departure" id="departure" placeholder="departure city" />
-				</div>
-				<div class="formBox">
-					<label for="destination"></label>
-					<input type="text" name="destination" id="destination" placeholder="destination city" />
-				</div>
-				
-				<div class="formBox">
-					<label for="departure_dt"></label>
-					<input type="date" name="departure_dt" id="departure_dt" placeholder="" />
-				</div>
-				<div class="formBox">
-					<label for="return_dt"></label>
-					<input type="date" name="return_dt" id="return_dt" placeholder="" />
-				</div>
-				
-				<div class="col">
-					<label for="num_adults"></label>
-					<input type="number" name="num_adults" id="num_adults" min="1" max="10" step="1" />
-					<!-- OR 
-					<select name="num_adults" id="num_adults">
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="5">5</option>
-						<option value="6">6</option>
-						<option value="7">7</option>
-						<option value="8">8</option>
-						<option value="9">9</option>
-						<option value="10">10</option>
+                    
+                    <label for="destination">Destination:</label>
+					<select name="destination" id="destination">
+						<option value="1">London, UK</option>
+						<option value="2">Paris, France</option>
+						<option value="3">Cairo, Egypt</option>
+						<option value="4">Munich, Germany</option>
+						<option value="5">Pilgrimmage Trail</option>
+						<option value="6">New York, New York</option>
+						<option value="7">Vancouver, British Columbia</option>
 					</select>
-					-->
+                   
+                    <label for="departure_dt">Departure Date:</label>
+					<input type="date" name="departure_dt" id="departure_dt" placeholder="" />
+                    
+                    <label for="return_dt">Returning Date:</label>
+					<input type="date" name="return_dt" id="return_dt" placeholder="" />
+				</div> 
+      
+      
+      <div role="application" class="col">
+                    <label for="num_adults">Guests (couples - 18+):</label>
+                    <input type="range" name="num_adults" id="num_adults" min="2" max="10" step="2" data-show-value="true" data-popup-enabled="true" />
+					<p>Prices:</p>
+                    <p>Each ticket costs $180. Please indicate the number of people you wish to include with this package(max. 10 people).</p>
+                     <p>The price is calculated $180 multiplied by the number of adults joining.</p>
+                    <label for="price">Price $</label>
+                    <input type="range" name="price" id="price" min="100" max="1800" value="0" data-show-value="true" data-popup-enabled="true" >
+      				
+      </div>
+      				<div class="col">
+					<div class="promo">
+					<label for="promocode" title="Promotion code">Promo code:</label>
+					<input type="text" name="promocode" id="promocode" placeholder="Available in Dec. 2014!" />
 				</div>
-				<div class="col">
-					<label for="price" title=""Max. price per person>Max. Price</label>
-					<input type="range" name="price" id="price" min="100" max="2000" value="1000"/>
+                <input type="submit" data-inline="true" value="Submit">
 				</div>
-				
-				<div class="col buttons">
-					<input type="reset" name="btnReset" id="btnReset" value="Reset" />
-					<input type="submit" name="btnSubmit" id="btnSubmit" value="Submit" />
-				</div>
-			</form>
-		</section>
-		<footer class="foot">
-			<p>&copy; 2014 Chicken Stuff Inc.</p>
-		</footer>
-	</div>
-	<script src="js/main.js"></script>
+                
+      
+    </form>
+</section>
+</div>
+</div>
 </body>
 </html>
+

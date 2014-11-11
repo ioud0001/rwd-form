@@ -4,13 +4,17 @@
 
 Remember to use something like type-scale.com 
 to get your font sizes
+Input icons downloaded from http://www.famfamfam.com/lab/icons/silk/
+
 *******************************************/
 *{
 	padding:0;
 	margin: 0;
 }
 html,body{
-
+	 	background-image:url(../images/icons/geese-flight.jpg);
+		background-position: right;
+		 
 }
 h1{
 
@@ -19,14 +23,17 @@ h2{
 
 }
 p{
-
+	
 }
 
 /*******************************************
 				Layout
 *******************************************/
 .wrapper{
-	
+	background-color: #F1FFA9;
+	padding-left: 5px;
+	overflow: auto;
+	max-width: 780px; 
 }
 .masthead{
 	
@@ -35,33 +42,139 @@ p{
 	
 }
 .foot{
-	
+	font-size: 0.8rem;
 }
 
 /*******************************************
 				Form Styles
 *******************************************/
-.formBox{
-	
-}
-.buttons{
-	
+
+.buttons input{
+	background-color: #B24338;
+	color: #F1FFA9;
+	border: 1px solid #B24338;
+	padding: 2px 2px 2px 2px;
 }
 label{
-	
+	background-color: #3B2997;
+	color: white;
 }
 input[type=text],
 input[type=number],
 input[type=date]{
-	
+	border: 1px solid #220E87;
 }
 input[type=submit],
 input[type=reset]{
-	
+	display: block; !important;
 }
 
+.formBox, .col {
+	border: 1px solid #F31BC3;
+	margin-top: 5px;
+	margin-left: 10px; 
+	float: left;
+	display: inline;
+	width: 30%;
+}
 
+.col > buttons{
+	background: none;
+}
 /*******************************************
 				Image Styles
 *******************************************/
+#departure_dt, #return_dt{
+	background-image:url(../images/icons/date.png);!important
+	background-repeat: no-repeat;
+	padding-left: 18px;
+	background-repeat: no-repeat;
+}
 
+#promocode{
+		background-image:url(../images/icons/heart.png);!important
+	background-repeat: no-repeat;
+	padding-left: 18px;
+	line-height: 15px;
+	background-repeat: no-repeat;
+}
+#departure, #destination{
+	background-image:url(../images/icons/world.png);!important
+	background-repeat: no-repeat;
+	padding-left: 18px;
+	line-height: 15px;
+	background-repeat: no-repeat; 
+}
+
+#num_adults{
+	background-image:url(../images/icons/group_link.png);!important
+	backgroud-repeat: no-repeat;
+	padding-left: 18px;
+	line-height: 15px;
+	background-repeat: no-repeat;
+}
+
+p{
+	display: block;
+	clear: both;
+}
+input, select{
+	display: block;
+}
+
+.ui-slider-track .ui-btn.ui-slider-handle{
+	width: 30%; !important
+}
+.ui-slider-track .ui-btn.ui-slider-handle{
+	margin: -15px 0 0 -2px; !important;
+}
+/*******************************************
+				Mobile First
+*******************************************/
+
+@media all and (min-width: 781px){
+	.wrapper{
+		max-width: 1000px;
+	}
+	.ui-content{
+		width: 1000px;
+	}
+	.promo{
+		display: inline;
+		clear: none;
+	}
+}
+@media all and (max-width: 780px){
+	div.formBox, div.col{
+		display: inline;
+		float: left;
+		width: 40%; !important
+	}
+		col.promo{
+		width: 100%; !important
+	}
+}
+
+@media all and (max-width: 499px){
+	div.formBox, div.col{
+		display: block;!important
+		clear: both;
+		margin-top: 2px;
+		width: 90%; !important
+	}
+
+	body{
+		background-image: none;
+	}
+	.wrapper{
+		width: 100%;
+	}
+	.promo, .col buttons{
+		clear: both;
+		display: block;
+	}
+
+	.ui-slider-track .ui-btn.ui-slider-handle{
+	width: 15%; !important
+}
+}
